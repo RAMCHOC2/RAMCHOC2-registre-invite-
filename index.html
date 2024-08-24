@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMCHOC - Inscription & Connexion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2e2b28; /* Chocolat foncé */
+            color: #f4e3d7; /* Crème légère */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #3e3733; /* Chocolat moyen */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f4e3d7; /* Crème légère */
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #d1b89f; /* Caramel clair */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #a58d7f; /* Caramel foncé */
+            border-radius: 5px;
+            background-color: #f4e3d7; /* Crème légère */
+            color: #3e3733; /* Chocolat moyen */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #a25842; /* Rouge chocolat */
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #892f20; /* Rouge chocolat foncé */
+        }
+
+        .toggle-btn {
+            background-color: #5e5049; /* Chocolat avec un ton rougeâtre */
+            color: #f4e3d7; /* Crème légère */
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .toggle-btn:hover {
+            background-color: #a58d7f; /* Caramel foncé */
+        }
+
+        .service-client button {
+            background-color: #a25842; /* Rouge chocolat */
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .service-client button:hover {
+            background-color: #892f20; /* Rouge chocolat foncé */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bienvenue sur RAMCHOC</h2>
+
+        <button class="toggle-btn" onclick="toggleForms()">S'inscrire / Se connecter</button>
+
+        <!-- Formulaire d'inscription -->
+        <form id="register-form" onsubmit="return handleSubmit(event, 'inscription')">
+            <div class="form-group">
+                <label for="username-register">Nom d'utilisateur</label>
+                <input type="text" id="username-register" name="username" placeholder="Nom d'utilisateur avec 2 chiffres obligatoires" required>
+            </div>
+            <div class="form-group">
+                <label for="password-register">Mot de passe</label>
+                <input type="password" id="password-register" name="password" placeholder="Mot de passe" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirmer le mot de passe</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmer le mot de passe" required>
+            </div>
+            <div class="form-group">
+                <label for="referral-code">Code de parrainage</label>
+                <input type="text" id="referral-code" name="referral-code" placeholder="Code de parrainage">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="S'inscrire">
+            </div>
+        </form>
+
+        <!-- Formulaire de connexion -->
+        <form id="login-form" style="display: none;" onsubmit="return handleSubmit(event, 'connexion')">
+            <div class="form-group">
+                <label for="username-login">Nom d'utilisateur</label>
+                <input type="text" id="username-login" name="username-login" placeholder="Nom d'utilisateur" required>
+            </div>
+            <div class="form-group">
+                <label for="password-login">Mot de passe</label>
+                <input type="password" id="password-login" name="password-login" placeholder="Mot de passe" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Se connecter">
+            </div>
+        </form>
+
+        <div class="service-client">
+            <button onclick="window.location.href='https://t.me/idylle0'">👩‍⚕️ Service Client</button>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour basculer entre les formulaires
+        function toggleForms() {
+            const registerForm = document.getElementById('register-form');
+            const loginForm = document.getElementById('login-form');
+
+            if (registerForm.style.display === 'none') {
+                registerForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            } else {
+                registerForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        }
+
+        // Fonction pour gérer la soumission des formulaires
+        function handleSubmit(event, type) {
+            event.preventDefault();
+            if (type === 'inscription') {
+                window.location.href = 'https://ramchoc2.github.io/RAMCHOC0/';
+            } else if (type === 'connexion') {
+                window.location.href = 'https://ramchoc2.github.io/RAMCHOC0/';
+            }
+            return false;
+        }
+
+        // Fonction pour générer un code de parrainage aléatoire
+        function generateReferralCode() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let code = '';
+            for (let i = 0; i < 8; i++) {
+                code += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return code;
+        }
+
+        // Fonction pour pré-remplir ou générer un nouveau code de parrainage
+        function prefillOrGenerateReferralCode() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let referralCode = urlParams.get('referral');
+
+            if (!referralCode) {
+                referralCode = generateReferralCode();
+                window.history.replaceState(null, null, "?referral=" + referralCode);
+            }
+
+            document.getElementById('referral-code').value = referralCode;
+        }
+
+        // Appel de la fonction lors du chargement de la page
+        window.onload = prefillOrGenerateReferralCode;
+    </script>
+
+</body>
+</html>
